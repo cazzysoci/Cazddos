@@ -86,7 +86,7 @@ async function bootup() {
     console.log(`|| ▓░░░░░░░░░ || 10%`);
     await exec(`npm i axios tls http2 hpack net cluster crypto ssh2 dgram @whiskeysockets/baileys libphonenumber-js chalk gradient-string pino mineflayer proxy-agent`)
     console.log(`|| ▓▓░░░░░░░░ || 20%`);
-    const getLatestVersion = await fetch('https://raw.githubusercontent.com/permenmd/cache/main/version.txt');
+    const getLatestVersion = await fetch('https://raw.githubusercontent.com/cazzysoci/Cazddos/main/lib/cache/version.txt');
     const latestVersion = await getLatestVersion.text()
     console.log(`|| ▓▓▓░░░░░░░ || 30%`);
     if (version === latestVersion.trim()) {
@@ -560,7 +560,7 @@ ${kiddies.data}
 }
 // [========================================] //
 async function sigma() {
-const getNews = await fetch(`https://raw.githubusercontent.com/permenmd/cache/main/news.txt`)
+const getNews = await fetch(`https://raw.githubusercontent.com/cazzysoci/Cazddos/main/lib/cache/news.txt`)
 const latestNews = await getNews.text();
 const creatorCredits = `
 Created And Coded Full By CazzySoci
