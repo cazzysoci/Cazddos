@@ -43,7 +43,7 @@ console.log(`
 @@@@&#&#&B&##&&B&#&#&###&B#&##&##&##&#&&B@@@@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
      
-StarsXTools ${version}
+CazzySociTools ${version}
 Owner: CazzySoci
 Premium: true
 Cazzy Tools DDoS By CazzySoci 
