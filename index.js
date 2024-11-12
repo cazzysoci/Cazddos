@@ -95,7 +95,7 @@ async function bootup() {
     const secretBangetJir = await fetch('https://raw.githubusercontent.com/permenmd/cache/main/sigma.txt');
     const password = await secretBangetJir.text();
     await console.log(`Login Key Required`)
-    permen.question('[\x1b[1m\x1b[31mPermenMD Security\x1b[0m]: \n', async (skibidi) => {
+    permen.question('[\x1b[1m\x1b[31mCazzySoci  Security\x1b[0m]: \n', async (skibidi) => {
       if (skibidi === password.trim()) {
         console.log(`Successfuly Logged`)
         await scrapeProxy()
@@ -135,7 +135,7 @@ console.log(`
 WiFi Killer Has Started
 Type exit To Stop
 `);
-permen.question('[\x1b[1m\x1b[31mPermenMD Wifi Killer\x1b[0m]: \n', async (yakin) => {
+permen.question('[\x1b[1m\x1b[31mCazzySoci  Wifi Killer\x1b[0m]: \n', async (yakin) => {
 if (yakin === 'exit') {
   startKillwiFi.kill('SIGKILL')
   console.log(`WiFi Killer Has Ended`)
