@@ -92,7 +92,7 @@ async function bootup() {
     if (version === latestVersion.trim()) {
     console.log(`|| ▓▓▓▓▓▓░░░░ || 60%`);
     
-    const secretBangetJir = await fetch('https://raw.githubusercontent.com/permenmd/cache/main/sigma.txt');
+    const secretBangetJir = await fetch('https://raw.githubusercontent.com/cazzysoci/Cazddos/main/lib/cache/pass.txt');
     const password = await secretBangetJir.text();
     await console.log(`Login Key Required`)
     permen.question('[\x1b[1m\x1b[31mCazzySoci  Security\x1b[0m]: \n', async (skibidi) => {
