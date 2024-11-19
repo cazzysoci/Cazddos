@@ -5,4 +5,6 @@
 
  cd Cazddos
 
+ npm i axios
+ 
  node index.js
