@@ -51,7 +51,7 @@ Cazzy Tools DDoS By CazzySoci
 // [========================================] //
 async function scrapeProxy() {
   try {
-    const response = await fetch('https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt');
+    const response = await fetch('https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt');
     const data = await response.text();
     fs.writeFileSync('proxy.txt', data, 'utf-8');
   } catch (error) {
