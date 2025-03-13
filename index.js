@@ -288,7 +288,7 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
         exec(`node ${metode} ${target} ${duration} 100 10 proxy.txt`)
           sigma()
           } else if (methods === 'destroy') {
-       pushOngoing(target, methods, duration)
+       pushOngoing(target, methods, duration)/
         exec(`node ${metode} ${target} ${duration} 100 10 proxy.txt`)
           sigma()
           } else if (methods === 'slim') {
