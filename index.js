@@ -269,7 +269,7 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
         sigma()
         } else if (methods === 'bypass') {
        pushOngoing(target, methods, duration)
-        exec(`node ${metode} ${target} ${duration} 100 100 proxy.txt`)
+        exec(`node ${metode} ${target} ${duration} 100 10 proxy.txt`)
           sigma()
           } else if (methods === 'raw') {
        pushOngoing(target, methods, duration)
