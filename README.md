@@ -4,15 +4,19 @@
  git clone https://github.com/cazzysoci/Cazddos
 
  cd Cazddos
+```
 
+```bash
  npm i axios
- 
- node index.js
- ```
+```
 
 ```bash
 npm install node-fetch
 ```
 ```bash
 npm install proxy-agent
+```
+
+```bash
+node index.js
 ```
