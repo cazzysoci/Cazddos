@@ -699,6 +699,8 @@ permen.question('[\x1b[1m\x1b[32mCazzySoci Console\x1b[0m]: \n', (input) => {
 || destroy    || Kill That Socket
 || flooder    || Powerful Flooder
 || peterda    || Flooder with Advanced Features
+|| ntp        || Ntp Flood server
+|| mem        || Mem Flood server
 [=========================================]
 `);
     sigma();
