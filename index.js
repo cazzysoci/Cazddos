@@ -298,7 +298,6 @@ console.log(`
 ========================================================================
 Target   : ${target}
 Duration : ${duration}
-Port     : ${port}
 Methods  : ${methods}
 ISP      : ${result.isp}
 Ip       : ${result.query}
