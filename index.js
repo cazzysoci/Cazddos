@@ -3,7 +3,6 @@
 const { exec, spawn  } = require('child_process')
 const readline = require('readline')
 const url = require('url')
-const fs = require('fs')
 const axios = require('axios')
 const net = require('net');
 const random = require('random');
