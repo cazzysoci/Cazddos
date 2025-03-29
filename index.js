@@ -714,6 +714,7 @@ permen.question('[\x1b[1m\x1b[32mCazzySoci Console\x1b[0m]: \n', (input) => {
 || ntp        || Ntp Flood server
 || mem        || Mem Flood server
 || kupal      || DOWN/BYPASS Ex: https://target.com?q=%RAND%
+|| lol        || BYE WEBSITE HAHA 
 [=========================================]
 `);
     sigma();
